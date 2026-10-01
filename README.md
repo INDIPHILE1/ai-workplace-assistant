@@ -1,81 +1,120 @@
-# AI Workplace Assistant
+# AI Workplace Productivity Assistant
 
-Build a modern, responsive web app called AI Workplace Productivity Assistant.
+## Project Overview
 
-Create a clean professional SaaS-style dashboard using light blue, white, and black. No login, registration, or backend is required. Users must be able to open and use the application immediately.
+**AI Workplace Productivity Assistant** is a modern web application designed to help professionals improve productivity by using AI to manage common workplace tasks.
 
-Main Features
+The application provides AI-powered tools for summarizing meeting notes, planning tasks and schedules, and researching different topics. Users can access the application immediately without creating an account or signing in.
 
-1. Meeting Notes Summarizer
+## Features Implemented
 
-User can paste or upload meeting notes.
+### 📝 Meeting Notes Summarizer
 
-AI must generate a meaningful summary.
+* Paste meeting notes into the application.
+* Generate an AI-powered summary.
+* Extract important:
 
-Extract action items, decisions, deadlines, and key points.
+  * Action items
+  * Decisions
+  * Deadlines
+  * Key points
+* Edit and copy AI-generated results.
 
-Results must be editable, copyable, and downloadable.
+### 📅 AI Task Planner
 
-2. AI Task Planner
+* Enter tasks, priorities, deadlines, and available time.
+* Generate personalized daily or weekly schedules.
+* Prioritize tasks based on urgency and importance.
+* Edit generated schedules.
 
-User enters their tasks, priorities, deadlines, and available time.
+### 🔎 AI Research Assistant
 
-AI generates a personalized daily or weekly schedule.
+* Ask questions about different topics.
+* Summarize provided text or articles.
+* Generate key insights and recommendations.
+* Provide dynamic AI-generated responses based on the user's input.
 
-AI prioritizes tasks based on urgency, importance, and deadlines.
+### 🎨 User Interface
 
-Users can edit the generated schedule.
+* Modern SaaS-style dashboard.
+* Responsive design for desktop, tablet, and mobile.
+* Sidebar navigation.
+* Clean light blue, white, and black color scheme.
+* Editable AI outputs.
+* Loading and error states.
+* No registration or login required.
 
-3. AI Research Assistant
+### 🛡️ Responsible AI
 
-User enters any topic, question, or article/text.
+The application includes a responsible AI disclaimer reminding users that AI-generated information should be reviewed and verified before being used for important decisions.
 
-AI generates a useful summary, key insights, explanations, and recommendations.
+> **Responsible AI Notice:** AI-generated content may contain errors. Always review and verify important information before using it.
 
-It must handle different questions and topics dynamically, not return generic/demo responses.
+## Technologies and Tools Used
 
-Results must be editable and copyable.
+* **React** – Front-end application development
+* **TypeScript** – Type-safe programming
+* **Vite** – Development and build tool
+* **Tailwind CSS** – Responsive and modern styling
+* **AI API / AI integration** – Dynamic AI-generated responses
+* **Git & GitHub** – Version control and repository management
+* **Lovable** – Application development and UI generation
 
-UI
+## Setup Instructions
 
-Left sidebar navigation: Dashboard, Meeting Notes, Task Planner, Research Assistant, Settings.
+### 1. Clone the Repository
 
-Modern dashboard with cards and clear sections.
+```bash
+git clone https://github.com/YOUR-USERNAME/ai-workplace-productivity-assistant.git
+```
 
-Responsive on desktop, tablet, and mobile.
+### 2. Open the Project
 
-Include loading states, empty states, error handling, and clear success feedback.
+```bash
+cd ai-workplace-productivity-assistant
+```
 
-Use structured AI prompts so responses are relevant to the user's actual input.
+### 3. Install Dependencies
 
-Important AI Requirement
+```bash
+npm install
+```
 
-All generated results must be dynamically based on the user's input. Do not use hardcoded or generic AI responses. The application should be designed to answer different questions and tasks intelligently.
+### 4. Start the Development Server
 
-Responsible AI
-
-Include a visible disclaimer:
-“AI-generated content may contain errors. Always review and verify important information before using it.”
-
-Keep the design polished, minimal, professional, and easy to use.
-
-This project was built with [Lovable](https://lovable.dev).
-
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/5de532b5-c193-44bb-b025-4eaf8ed11bc4).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
-
-## Development
-
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
-
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
+```bash
 npm run dev
 ```
+
+The application will then be available through the local development URL provided in your terminal.
+
+### 5. Build for Production
+
+```bash
+npm run build
+```
+
+## Usage
+
+1. Open the application.
+2. Select a tool from the sidebar.
+3. Enter your information or question.
+4. Submit the request.
+5. Review the AI-generated response.
+6. Edit, copy, or use the generated results as required.
+
+No account or registration is required.
+
+## Project Purpose
+
+The purpose of this project is to demonstrate how AI can be integrated into a modern productivity application to assist professionals with everyday workplace activities such as meeting management, task planning, scheduling, and research.
+
+## Author
+
+**Indiphile Diko**
+
+IT Student | Aspiring Software Developer
+
+---
+
+© 2026 Indiphile Diko. All rights reserved.
