@@ -36,7 +36,7 @@ export function useAITool(tool: Tool) {
       } else if (r.result) {
         const parsed = JSON.parse(r.result) as Record<string, unknown>;
         setResult(parsed);
-        addHistory(tool, String(parsed.title ?? histTitle).slice(0, 80));
+        addHistory(tool, String(parsed["title"] ?? histTitle).slice(0, 80));
         toast.success("Results generated");
       }
     } catch {
