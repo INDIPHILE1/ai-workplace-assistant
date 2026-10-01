@@ -41,7 +41,7 @@ function Page() {
   return (
     <>
       <PageHeader icon={<CalendarClock className="h-5 w-5" />} title="AI Task Planner" desc="Add your tasks and let AI prioritize and schedule them." />
-      <div className="grid gap-6 xl:grid-cols-2">
+      <div className="grid items-start gap-6 xl:grid-cols-2">
         <div className="space-y-4 rounded-2xl border bg-card p-4 shadow-soft sm:p-6">
           <div className="inline-flex rounded-lg bg-muted p-1">
             {(["daily", "weekly"] as const).map((m) => (

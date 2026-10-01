@@ -37,7 +37,7 @@ function Page() {
   return (
     <>
       <PageHeader icon={<NotebookPen className="h-5 w-5" />} title="Meeting Notes Summarizer" desc="Paste or upload notes to extract summary, decisions, action items and deadlines." />
-      <div className="grid gap-6 xl:grid-cols-2">
+      <div className="grid items-start gap-6 xl:grid-cols-2">
         <div className="space-y-3 rounded-2xl border bg-card p-4 shadow-soft sm:p-6">
           <div className="flex items-center justify-between">
             <label className="text-sm font-semibold">Meeting notes</label>

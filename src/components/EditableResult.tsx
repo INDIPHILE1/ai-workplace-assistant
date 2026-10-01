@@ -115,7 +115,7 @@ function ListEditor({ items, onChange }: { items: Val[]; onChange: (v: Val[]) =>
               ))}
             </div>
           ) : (
-            <Input value={String(it)} onChange={(e) => update(i, e.target.value)} />
+            <Textarea rows={2} className="min-h-0" value={String(it)} onChange={(e) => update(i, e.target.value)} />
           )}
           <Button variant="ghost" size="icon" onClick={() => remove(i)} aria-label="Remove">
             <Trash2 className="h-4 w-4" />

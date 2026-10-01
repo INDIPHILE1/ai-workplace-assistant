@@ -25,7 +25,7 @@ function Page() {
   return (
     <>
       <PageHeader icon={<Search className="h-5 w-5" />} title="AI Research Assistant" desc="Ask a question, name a topic, or paste an article." />
-      <div className="grid gap-6 xl:grid-cols-2">
+      <div className="grid items-start gap-6 xl:grid-cols-2">
         <div className="space-y-3 rounded-2xl border bg-card p-4 shadow-soft sm:p-6">
           <label className="text-sm font-semibold">Topic, question or text</label>
           <Textarea rows={12} value={q} onChange={(e) => setQ(e.target.value)} placeholder="e.g. What are best practices for running effective one-on-ones?" />
