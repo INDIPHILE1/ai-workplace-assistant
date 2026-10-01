@@ -59,7 +59,7 @@ export const runAI = createServerFn({ method: "POST" })
   )
   .handler(async ({ data }) => {
     const key = process.env["LOVABLE_API_KEY"];
-    if (!key) return { error: "AI is not configured." } as const;
+    if (!key) return { error: "AI is not configured.", result: null as string | null };
 
     const res = await fetch("https://ai.gateway.lovable.dev/v1/responses", {
       method: "POST",
@@ -87,7 +87,7 @@ export const runAI = createServerFn({ method: "POST" })
           : res.status === 402
             ? "AI credits are exhausted. Please add credits to continue."
             : `AI request failed (${res.status}). Please try again.`;
-      return { error: msg } as const;
+      return { error: msg, result: null as string | null };
     }
 
     const reader = res.body.getReader();
@@ -111,16 +111,17 @@ export const runAI = createServerFn({ method: "POST" })
           if (ev.type === "response.output_text.delta") text += ev.delta;
           else if (ev.type === "response.refusal.delta") refused += ev.delta;
           else if (ev.type === "error" || ev.type === "response.failed")
-            return { error: "The AI could not complete this request. Please try again." } as const;
+            return { error: "The AI could not complete this request. Please try again.", result: null as string | null };
         } catch {
           /* partial */
         }
       }
     }
-    if (refused) return { error: "The AI declined this request." } as const;
+    if (refused) return { error: "The AI declined this request.", result: null as string | null };
     try {
-      return { result: JSON.parse(text) as Record<string, unknown> } as const;
+      JSON.parse(text);
+      return { error: null as string | null, result: text };
     } catch {
-      return { error: "The AI returned an unexpected response. Please try again." } as const;
+      return { error: "The AI returned an unexpected response. Please try again.", result: null as string | null };
     }
   });

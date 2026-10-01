@@ -24,7 +24,10 @@ function Page() {
 
   const onFile = (f?: File) => {
     if (!f) return;
-    if (f.size > 1_000_000) return toast.error("File is too large (max 1MB).");
+    if (f.size > 1_000_000) {
+      toast.error("File is too large (max 1MB).");
+      return;
+    }
     const r = new FileReader();
     r.onload = () => {
       setNotes(String(r.result));

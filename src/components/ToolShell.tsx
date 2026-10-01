@@ -30,12 +30,13 @@ export function useAITool(tool: Tool) {
     setError(null);
     try {
       const r = await call({ data: { tool, input, detail: getSettings().detail } });
-      if ("error" in r && r.error) {
+      if (r.error) {
         setError(r.error);
         toast.error(r.error);
-      } else if ("result" in r && r.result) {
-        setResult(r.result);
-        addHistory(tool, String(r.result.title ?? histTitle).slice(0, 80));
+      } else if (r.result) {
+        const parsed = JSON.parse(r.result) as Record<string, unknown>;
+        setResult(parsed);
+        addHistory(tool, String(parsed.title ?? histTitle).slice(0, 80));
         toast.success("Results generated");
       }
     } catch {
